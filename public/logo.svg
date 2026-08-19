@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="35%" r="80%">
+      <stop offset="0%" stop-color="#132018"/>
+      <stop offset="100%" stop-color="#070d0a"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6d989"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#a9791f"/>
+    </linearGradient>
+    <linearGradient id="mtn1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c3a2e"/>
+      <stop offset="100%" stop-color="#0d1e17"/>
+    </linearGradient>
+    <linearGradient id="mtn2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a4d3c"/>
+      <stop offset="100%" stop-color="#132a20"/>
+    </linearGradient>
+    <clipPath id="circleClip">
+      <circle cx="256" cy="256" r="245"/>
+    </clipPath>
+  </defs>
+
+  <!-- outer ring -->
+  <circle cx="256" cy="256" r="248" fill="url(#bg)" stroke="url(#gold)" stroke-width="6"/>
+  <circle cx="256" cy="256" r="222" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- mountains clipped to circle, pushed low so they sit as a quiet base band -->
+  <g clip-path="url(#circleClip)">
+    <path d="M -10 400 L 60 340 L 110 380 L 175 310 L 230 375 L 285 330 L 350 385 L 410 340 L 522 400 L 522 480 L -10 480 Z" fill="url(#mtn1)" opacity="0.85"/>
+    <path d="M -10 420 L 55 370 L 120 405 L 195 350 L 250 400 L 315 360 L 380 405 L 445 365 L 522 415 L 522 480 L -10 480 Z" fill="url(#mtn2)"/>
+    <path d="M 175 310 L 187 324 L 163 328 Z" fill="#eaf3ee" opacity="0.9"/>
+    <path d="M 285 330 L 296 342 L 275 345 Z" fill="#eaf3ee" opacity="0.85"/>
+  </g>
+
+  <!-- compass rose, centered in upper field, clear of mountains -->
+  <g transform="translate(256,208)">
+    <circle r="94" fill="none" stroke="url(#gold)" stroke-width="2" opacity="0.9"/>
+    <circle r="80" fill="none" stroke="url(#gold)" stroke-width="1" opacity="0.5"/>
+
+    <g stroke="url(#gold)" stroke-width="2" opacity="0.8">
+      <line x1="0" y1="-94" x2="0" y2="-84"/>
+      <line x1="0" y1="94" x2="0" y2="84"/>
+      <line x1="-94" y1="0" x2="-84" y2="0"/>
+      <line x1="94" y1="0" x2="84" y2="0"/>
+    </g>
+
+    <polygon points="0,-92 16,0 0,14 -16,0" fill="url(#gold)"/>
+    <polygon points="0,92 10,0 0,-6 -10,0" fill="#5b4a1e" opacity="0.9"/>
+    <polygon points="92,0 0,10 -6,0 0,-10" fill="#8a6d24" opacity="0.85"/>
+    <polygon points="-92,0 0,10 6,0 0,-10" fill="#8a6d24" opacity="0.85"/>
+
+    <circle r="12" fill="#0d1e17" stroke="url(#gold)" stroke-width="3"/>
+    <circle r="4.5" fill="url(#gold)"/>
+  </g>
+
+  <!-- monogram, comfortably spaced above the bottom ring, own dark plate for legibility -->
+  <text x="256" y="452" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="38" fill="url(#gold)" letter-spacing="8">S J</text>
+</svg>
